@@ -39,7 +39,7 @@ n =0:N-1;
 x =cos(pi*n/16) ;
 figure(2);
 title('Дискретний сигнал');
-subplot(3,1,1), stem(x,'o'), grid on;
+subplot(3,1,1), stem(x,'*'), grid on;
 xlabel('Відліки');
 ylabel('Амплітуда');
 subplot(3,1,2), plot(x),grid on;
@@ -48,4 +48,29 @@ ylabel('Амплітуда');
 subplot(3,1,3), stairs(x),grid on;
 xlabel('Відліки');
 ylabel('Амплітуда');
+
+
+%=== Завдання #1.3 ===
+% Моделювання дискретної експоненти
+n =0:20;
+x1 = 0.8.^n;
+x2 = -0.8.^n;
+x3 = 1.1.^n;
+x4 = -1.1.^n;
+figure(3)
+title('Моделі дискретної експоненти');
+subplot(4,1,1), stem(x1); grid on
+xlabel('Відліки')
+ylabel('Амплітуда');
+subplot(4,1,2), stem(x2); grid on
+xlabel('Відліки');
+ylabel('Амплітуда');
+subplot(4,1,3), stem(x3); grid on
+xlabel('Відліки');
+ylabel('Амплітуда');
+subplot(4,1,4), stem(x4); grid on
+xlabel('Відліки');
+ylabel('Амплітуда');
+
+
 
