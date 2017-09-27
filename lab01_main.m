@@ -72,5 +72,12 @@ subplot(4,1,4), stem(x4); grid on
 xlabel('Відліки');
 ylabel('Амплітуда');
 
-
-
+Fs=1000;
+t=0:1/Fs:2;
+x = 3*sin(6.*pi.*t)+5*sin(16*pi.*t);
+pks = pksdetect(x);
+figure (4);
+plot(t,x,'k-'); hold on;
+plot(t(pks),x(pks), 'k*'); hold off;
+title ('Змодельований сигнал');
+xlabel('time(s)'); ylabel('x(t)');
