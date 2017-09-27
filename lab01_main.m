@@ -72,6 +72,7 @@ subplot(4,1,4), stem(x4); grid on
 xlabel('Відліки');
 ylabel('Амплітуда');
 
+
 Fs=1000;
 t=0:1/Fs:2;
 x = 3*sin(6.*pi.*t)+5*sin(16*pi.*t);
@@ -81,3 +82,62 @@ plot(t,x,'k-'); hold on;
 plot(t(pks),x(pks), 'k*'); hold off;
 title ('Змодельований сигнал');
 xlabel('time(s)'); ylabel('x(t)');
+
+
+Fs=200;
+T=1/Fs;
+D=0.25;
+MU=0;
+n=0:1000;
+Q = 1;
+R=randn(size(n))*Q+MU;
+s=1.8*cos(20*pi.*n*T);
+x=s+R;
+figure(5);
+subplot(3,1,1),plot(s);
+title('Model signala');
+xlabel('Відліки');
+ylabel('Амплітуда');
+xlim ([0 1000]);
+subplot (3,1,2), plot(R);
+title ('Шум');
+xlabel('Відліки');
+ylabel('Амплітуда');
+xlim([0 1000]);
+subplot(3,1,3),plot (x);
+title('Стохастичний сигнал');
+xlabel('Відліки')
+ylabel('Амплітуда');
+xlim([0 1000]);
+fprintf('MU (R) = %4.3g\n', mean(R));
+fprintf('D(R)=%4.3g\n', var(R));
+fprintf('x(n)=%4.3g\n', mean(n));
+fprintf('s(n)=%4.3g\n', mean(n));
+%%MU (R) = 0.0366
+%%D(R)=1.01
+%%x(n)= 500
+%%s(n)= 500
+
+
+pec1= load('pec1.dat');
+Fs=1000;
+fcg= pec1(:,1);
+ecg= pec1(:,2);
+cps= pec1(:,3);
+T= (0:length(fcg)-1)/Fs
+figure (6);
+subplot(3,1,1), plot(T,fcg);
+title ('Фонокардіограма');
+xlim([1 4]);
+ylabel('Амплітуда');
+subplot(3,1,2), plot(T,ecg);
+title('ЕКГ')
+xlim([1 4]);
+ylabel('Амплітуда');
+subplot(3,1,3), plot(T,cps);
+title('Сигнали каротидного пульсу');
+xlim([1 4]);
+ylabel('Амплітуда');
+
+
+
