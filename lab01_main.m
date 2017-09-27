@@ -72,6 +72,7 @@ subplot(4,1,4), stem(x4); grid on
 xlabel('Відліки');
 ylabel('Амплітуда');
 
+%%Завдання 1.4-1.6%%
 
 Fs=1000;
 t=0:1/Fs:2;
@@ -83,7 +84,7 @@ plot(t(pks),x(pks), 'k*'); hold off;
 title ('Змодельований сигнал');
 xlabel('time(s)'); ylabel('x(t)');
 
-
+%%Завдання "2.1-2.2"%%
 Fs=200;
 T=1/Fs;
 D=0.25;
@@ -118,7 +119,7 @@ fprintf('s(n)=%4.3g\n', mean(n));
 %%x(n)= 500
 %%s(n)= 500
 
-
+%% Завдання 3.1%%
 pec1= load('pec1.dat');
 Fs=1000;
 fcg= pec1(:,1);
