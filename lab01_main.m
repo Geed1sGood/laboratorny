@@ -20,7 +20,7 @@ N = 10;
 n = 0:N-1;
 x = double(n==0);
 y = double(n==2);
-A = class(x); 
+class(x); 
 figure(1)
 subplot(2,1,1), stem(n, x, '.'), grid on
 title('Модель сигналу')
@@ -36,9 +36,16 @@ ylabel('Амплітуда');
 % Моделювання дискретного сигналу
 N =200;
 n =0:N-1;
-x = cos ( pi * n / 16) ;
-figure(2)
-subplot(3,1,1), stem(x,'o');
-subplot(3,1,2), plot(x);
-subplot(3,1,3), stairs(x);
+x =cos(pi*n/16) ;
+figure(2);
+title('Дискретний сигнал');
+subplot(3,1,1), stem(x,'o'), grid on;
+xlabel('Відліки');
+ylabel('Амплітуда');
+subplot(3,1,2), plot(x),grid on;
+xlabel('Відліки');
+ylabel('Амплітуда');
+subplot(3,1,3), stairs(x),grid on;
+xlabel('Відліки');
+ylabel('Амплітуда');
 

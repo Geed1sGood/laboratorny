@@ -18,9 +18,9 @@ disp('Виконав:Грищук Д.Г , група 462 ІІДС')
 % Моделювання одиничного імпульсу
 N = 10;
 n = 0:N-1;
-x(n)= double(n==1);
-y(n) = double(n==2);
- 
+x = double(n==0);
+y = double(n==2);
+A = class(x); 
 figure(1)
 subplot(2,1,1), stem(n, x, '.'), grid on
 title('Модель сигналу')
@@ -29,16 +29,18 @@ ylabel('Амплітуда');
 subplot(2,1,2),stem(n,y,'*'), grid on
 title ('Модель сигналу з затримкой n-2');
 xlabel('Відліки');
-ylable('Амплітуда');
+ylabel('Амплітуда');
 
 
 %=== Завдання #1.2 === 
 % Моделювання дискретного сигналу
 N =200;
 n =0:N-1;
-x(n) =cos(Pi*n/16) ;
+x = cos ( pi * n / 16) ;
 figure(2)
-subplot(3,1,1), stem(n,y,'*');
-subplot(3,1,2), plot( )
-subplot(3,1,2), stairs( )
+title('Дискретний сигнал');
+xlabel
+subplot(3,1,1), stem(x,'o');
+subplot(3,1,2), plot(x);
+subplot(3,1,3), stairs(x);
 
